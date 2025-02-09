@@ -77,9 +77,9 @@ Use `localhost` for simulation and your team number/IP address when connecting t
 One method of connecting HTML and svelte elements to NetworkTables is through the `useEntry` react hook in the `@frc-web-components/react` package:
 
 ```typescript
-import { useEntry } from '@frc-web-components/react';
+import { useEntry } from "@frc-web-components/react";
 
-const [pose] = useEntry('/SmartDashboard/Field/Robot', [0, 0, 0]);
+const [pose] = useEntry("/SmartDashboard/Field/Robot", [0, 0, 0]);
 ```
 
 `useEntry` is similar to `useState` but sends and receives updates to a NetworkTables topic instead. The first parameter is the topic name and the second parameter is the default value. The above line will subscribe to the `/SmartDashboard/Field/Robot` topic. You can pass in the value returned to your element attributes/props. For example:
@@ -93,7 +93,7 @@ The pose prop will be set to the current value of `pose` and will be updated whe
 To send updates `useEntry` returns a setter function as well. For example:
 
 ```typescript
-const [count, setCount] = useEntry('/dashboard/count', 0);
+const [count, setCount] = useEntry("/dashboard/count", 0);
 setCount(5);
 ```
 
@@ -168,12 +168,12 @@ Per theme rules can be added by modifying the `themes.ts` file located in the `s
 
 ```typescript
 export const customLightTheme = {
-  '--my-element-background': 'cornflowerblue',
-  '--my-element-color': 'white',
+  "--my-element-background": "cornflowerblue",
+  "--my-element-color": "white",
 };
 
 export const customDarkTheme = {
-  '--my-element-background': 'cadetblue',
-  '--my-element-color': 'black',
+  "--my-element-background": "cadetblue",
+  "--my-element-color": "black",
 };
 ```
