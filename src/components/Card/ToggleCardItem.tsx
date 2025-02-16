@@ -4,6 +4,7 @@ import { cn } from "@udecode/cn";
 
 type ToggleCardItemProps = {
   title: string;
+  description: string;
   icon: IconType;
   isEnabled: boolean;
   onToggle: () => void;
@@ -11,6 +12,7 @@ type ToggleCardItemProps = {
 
 const ToggleCardItem = ({
   title,
+  description,
   icon: Icon,
   isEnabled,
   onToggle,
@@ -19,8 +21,8 @@ const ToggleCardItem = ({
     <div
       onClick={onToggle}
       className={cn([
-        "flex h-[200px] w-[300px] flex-col overflow-hidden rounded-lg bg-radial-[at_0%_25%] to-100% p-6 text-white shadow-lg",
-        !isEnabled // when enabled, make green gradient
+        "flex h-[200px] w-[300px] cursor-pointer flex-col overflow-hidden rounded-lg bg-radial-[at_0%_25%] to-100% p-6 text-white shadow-lg gap-y-4 transition-colors",
+        !isEnabled
           ? "from-[#2d4680] to-[#060f23]"
           : "from-[#2d8046] to-[#0f2306]",
       ])}
@@ -30,6 +32,9 @@ const ToggleCardItem = ({
           <SplitTitle title={title} />
         </h3>
         <Icon className="text-2xl" />
+      </div>
+      <div className="flex flex-row justify-between text-sm text-cyan-500">
+        {description}
       </div>
     </div>
   );

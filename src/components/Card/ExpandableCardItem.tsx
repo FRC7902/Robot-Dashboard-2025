@@ -2,6 +2,7 @@ import { IconType } from "react-icons";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import SplitTitle from "../../utils/SplitTitle";
+import { cn } from "@udecode/cn";
 
 type ExpandableCardItemProps = {
   title: string;
@@ -38,7 +39,9 @@ const ExpandableCardItem = ({
     // </div>
 
     <motion.div
-      className="flex overflow-hidden rounded-lg bg-radial-[at_0%_25%] from-[#2d4680] to-[#060f23] to-100% p-6 text-white shadow-lg"
+      className={cn(["flex overflow-hidden rounded-lg bg-radial-[at_0%_25%] from-[#2d4680] to-[#060f23] to-100% p-6 text-white shadow-lg",
+        !expanded && "cursor-pointer"
+      ])}
       initial={{ width: 300, height: 200 }}
       animate={{ width: expanded ? 450 : 300, height: expanded ? 500 : 200 }}
       transition={{ duration: 0.25, ease: "easeInOut" }}
