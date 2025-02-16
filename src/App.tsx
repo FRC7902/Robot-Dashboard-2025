@@ -1,7 +1,7 @@
 import { FaRegSquareCheck } from "react-icons/fa6";
 import "./App.css";
-import ExpandableCardItem from "./components/Card/ExpandableCardItem";
 import CardList from "./components/Card/CardList";
+import ExpandableCardItem from "./components/Card/ExpandableCardItem";
 import ToggleCardItem from "./components/Card/ToggleCardItem";
 
 function App() {
